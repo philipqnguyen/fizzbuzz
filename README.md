@@ -4,7 +4,7 @@
 
 A simple implementation of FizzBuzz in Ruby. There are two versions:
 - basic version which is predefined with "fizz" % 3 == 0 and "buzz" % 5 == 0
-- advance version where it can take any inputs of words and numbers for a custom fizzbuzz experience.
+- advance version where it can take any inputs of words and numbers for a custom fizzbuzz experience via a CSV file.
 
 ## Usage
 
@@ -16,11 +16,16 @@ f.basic(5)
 #=> "buzz"
 f.basic(15)
 #=> "fizzbuzz"
+```
 
-f.advance(8, cool: 8, dude: 10)
-#=> "cool"
-f.advance(80, super: 8, man: 10)
-#=> "superman"
+In the advance method, you can input a CSV file. For example, the following CSV file: fizz.csv has the following contents:
+fizz, 3
+buzz, 5
+siv, 7
+
+``` ruby
+f.advance(8, "./fizz.csv")
+#=> ["1", "2", "fizz", "4", "buzz", "fizz", "siv", "8", "fizz", "buzz", "11", "fizz", "13", "siv", "fizzbuzz"]
 ```
 ## Author
 
